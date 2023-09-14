@@ -1,0 +1,133 @@
+.photo-show {
+    width: 1200px;
+    display: flex;
+    margin: 20px auto;
+    padding: 4% 2%;
+    background-color: rgba(239, 246, 253, 0.9);
+    box-sizing: border-box;
+}
+
+/* 动画展示 */
+.box {
+    height: 550px;
+    flex: 1;
+    overflow: hidden;
+    margin: 0 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    transition: all, 0.8s;
+}
+
+.box img {
+    width: 650px;
+    height: 500px;
+    transition: all, 0.5s;
+
+}
+
+.box span {
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    color: rgb(49, 51, 51);
+}
+
+.box:hover {
+    flex: 1 1 50%;
+
+}
+
+.box:hover img {
+    width: 100%;
+    height: 550px;
+
+}
+
+/* 留言板功能 */
+.bord {
+    opacity: 0.9;
+    background-color: rgb(243, 247, 247);
+    box-sizing: border-box;
+    padding: 40px 40px;
+}
+
+.comment {
+    font-size: 20px;
+}
+
+.el-textarea {
+    position: relative;
+    margin-top: 20px;
+}
+
+.el-textarea textarea {
+    width: 100%;
+    border-radius: 5px;
+    text-indent: 20px;
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+
+.el-span {
+    position: absolute;
+    bottom: 10px;
+    left: 850px;
+}
+
+/* 昵称 */
+.el-input {
+    margin-top: 20px;
+}
+
+.el-input input {
+    width: 230px;
+    height: 35px;
+    text-indent: 10px;
+}
+
+.el-input button {
+    float: right;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(53, 161, 233);
+    color: aliceblue;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    /* 手放上去就会变成光标 */
+    cursor: pointer;
+}
+
+.messageBoard {
+    margin-top: 40px;
+}
+
+.messageBoard h2 {
+    margin-bottom: 10px;
+}
+
+#messageList {
+    margin: 10px 0;
+}
+
+.hh {
+    margin: 20px 0;
+    padding: 15px 20px;
+    background-color: rgb(224, 229, 241);
+    border-radius: 20px;
+}
+
+.hh p {
+    margin-top: 10px;
+}
+
+.hh span:nth-child(1) {
+    color: rgb(86, 85, 84);
+    font-size: 13px;
+}
+
+.hh span:nth-child(2) {
+    float: right;
+    font-size: 13px;
+    color: rgb(97, 98, 100);
+}

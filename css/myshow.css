@@ -1,0 +1,277 @@
+/* @font-face {
+    font-family: MonumentExtended-Regular;
+    font-weight: 700;
+    src: url(../font/MonumentExtended-Regular.woff2) format("truetype");
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: MonumentExtended-Black;
+    font-weight: 400;
+    src: url(../font/MonumentExtended-Black.woff) format("truetype");
+}
+
+@font-face {
+    font-family: MonumentExtended-Light;
+    font-weight: 400;
+    src: url(../font/MonumentExtended-Light.woff2) format("truetype");
+}
+
+@font-face {
+    font-family: NeueMachina-Regular;
+    font-weight: 400;
+    src: url(../font/NeueMachina-Regular.woff2) format("truetype");
+} */
+
+
+.content {
+    width: 1400px;
+    margin: 0 auto;
+    /* 盒子大小不改变 */
+    box-sizing: border-box;
+    padding: 10px 50px;
+    background-color: rgba(29, 29, 30, 0.8);
+    border-radius: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 80px;
+    z-index: 100;
+}
+
+
+.home {
+    position: absolute;
+    /* 鼠标悬停在该元素上时，鼠标光标会变为手型指针。 */
+    cursor: pointer;
+    left: 1200px;
+    top: 30px;
+    font-size: 30px;
+    color: rgb(249, 254, 254);
+}
+
+.photo-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.photo-wall img {
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+}
+
+/* 装图片的盒子 */
+.photo-item {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 100px 0;
+    position: relative;
+}
+
+/* 设置黑色遮罩层 */
+/* .photo-item.thumb-hover {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 10;
+}
+
+.photo-item:hover .thumb-hover {
+    opacity: 1;
+} */
+
+
+.photo-item:hover img {
+    transform: scale(1.3);
+}
+
+/* 照片墙字体位于照片上方的设置 */
+.tips {
+    color: aliceblue;
+    font-size: 20px;
+    /* 用于将所有字母大写，强调视觉效果 */
+    /* text-transform: uppercase; */
+    position: absolute;
+    padding: 10px 10px;
+    bottom: 10px;
+    z-index: 10;
+}
+
+.tips span {
+    display: block;
+}
+
+/* 照片墙和照片详情页文字介绍 */
+.introduction {
+    color: #fff;
+    font-family: "NeueMachina-Regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 10px;
+}
+
+.photo-detail {
+    display: none;
+    /* 在主轴居中对齐 */
+    justify-content: center;
+    /* 在垂直方向上居中对齐 */
+    align-items: center;
+    /* 从上到下布局（沿着Y轴） */
+    flex-direction: column;
+}
+
+/* 详情页照片首张照片盒子 */
+.top-photo {
+    width: 100%;
+    margin-bottom: 120px;
+    overflow: hidden;
+}
+
+.top-photo img {
+    width: 100%;
+    height: 100%;
+    /* 定义了一个名为photo-animation的动画效果，时长为50秒 */
+    animation: photo-animation 20s;
+    /* 动画会在播放完毕后反向播放，即从结束状态回到起始状态，然后再次反向播放，即反向播放 */
+    animation-direction: alternate;
+    /* 无限循环播放 */
+    animation-iteration-count: infinite;
+}
+
+/* 详情页其余照片展示盒子 */
+
+.photo-detail-item {
+    margin-bottom: 120px;
+    display: flex;
+    width: 100%;
+}
+
+.photo-detail-item img {
+    width: 100%;
+}
+
+
+
+.loading {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(131, 158, 187);
+    position: fixed;
+    left: 0;
+    top: 100vh;
+    z-index: 100;
+}
+
+.loading img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.width-24 {
+    width: 100%;
+}
+
+.width-11 {
+    width: 45.8333333333%;
+}
+
+.width-15 {
+    width: 58.3333333333% !important;
+}
+
+@keyframes loading-init {
+    0% {
+        top: 100vh;
+    }
+
+    100% {
+        top: 0vh;
+    }
+}
+
+@keyframes loading-out {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -100vh;
+    }
+}
+
+@keyframes item-out {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes item-init {
+    0% {
+        transform: translateY(10%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes photo-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 769px) {
+    .width-cell {
+        width: 100% !important;
+    }
+
+    .logo {
+        width: 15vw !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .photo-detail-item {
+        flex-direction: column;
+    }
+
+    .photo-detail-item img {
+        width: 100%;
+    }
+
+    .photo-detail-item .introduction {
+        padding: 5vw 0 !important;
+    }
+
+    .photo-detail-item .d-width-cell {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/message.css">
+
+    <title>留言板</title>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="top-nav">
+        <div class="w">
+            <ul>
+                <li><a href="file:///D:/Desktop/%E5%8D%9A%E5%AE%A2/html/index.html">首页</a></li>
+                <li><a href="file:///D:/Desktop/%E5%8D%9A%E5%AE%A2/html/goodmood.html">好心情</a></li>
+                <li><a href="javascript:;">留言板</a></li>
+                <li><a href="file:///D:/Desktop/%E5%8D%9A%E5%AE%A2/html/myshow.html">我的展板</a></li>
+            </ul>
+        </div>
+    </div>
+    <h2>相见就是缘分，留下来说说你的故事吧</h2>
+    <div class="photo-show">
+        <div class="box">
+            <img src="../展板image/1.jpg" alt="">
+            <span>生如逆旅</span>
+        </div>
+        <div class="box">
+            <img src="../展板image/2.jpg" alt="">
+            <span>生活明朗</span>
+        </div>
+        <div class="box">
+            <img src="../展板image/3.jpg" alt="">
+            <span>万物可爱</span>
+        </div>
+        <div class="box">
+            <img src="../展板image/4.jpg" alt="">
+            <span>凡心所向</span>
+        </div>
+    </div>
+    <!-- 留言板发布评论 -->
+    <div class="bord w">
+        <p class="comment">发表评论</p>
+        <div class="el-textarea">
+            <textarea placeholder="留言千万条，友善第一条" rows="7"></textarea>
+            <span class="el-span">0/200字</span>
+        </div>
+        <div class="wrapper">
+        </div>
+        <div class="el-input">
+            <input type="text" placeholder="昵称(必填)">
+            <span class="promopt"></span>
+            <button onclick="addMessage()">发布留言</button>
+        </div>
+        <!-- 留言列表 -->
+        <div class="messageBoard" id="messageBoard">
+            <h2>留言板</h2>
+            <hr>
+            <div id="messageList">
+            </div>
+
+        </div>
+    </div>
+    <script src="../js/message.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <title>登录界面</title>
+</head>
+
+<body>
+    <!-- 登录界面 -->
+    <!-- 由于没有后端的api，这里省略了验证码的人机验证步骤，给定了固定账号 -->
+    <!-- 用户名：admin -->
+    <!-- 密码：123456789 -->
+    <div class="login-box">
+        <h1>欢迎注册</h1>
+        <input type="text" placeholder="用户名"><br>
+        <input type="password" placeholder="密码">
+        <p></p>
+        <button>登录</button>
+
+    </div>
+</body>
+<script>
+    var button = document.querySelector('button');
+    var inp = document.querySelectorAll('input');
+    var p = document.querySelector('p')
+    button.onclick = function () {
+        for (let i = 0; i < inp.length; i++) {
+            if (inp[0].value === '') {
+                p.innerHTML = '用户名不能为空'
+                return
+            } if (inp[1].value.length > 0 && inp[1].value.length < 6 || inp[1].value.length > 18) {
+                p.innerHTML = '请输入正确的密码'
+                return
+            } if (inp[1].value === '') {
+                p.innerHTML = '密码不能为空'
+                return
+            } if (inp[1].value === '123456789' && inp[0].value === 'admin') {
+                p.innerHTML = '登录成功';
+                // 新加载页面
+                // window.open("file:///D:/Desktop/%E5%8D%9A%E5%AE%A2/html/index.html");
+                // 当前页面跳转，实现页面过渡不能返回
+                window.location.replace("file:///D:/Desktop/%E5%8D%9A%E5%AE%A2/html/index.html")
+                // 跳转到指定的url 当前页面跳转，能返回上一个访问页面
+                // window.location.href = "file:///D:/Desktop/%E5%8D%9A%E5%AE%A2/html/index.html"
+            } else {
+                p.innerHTML = '密码或用户名有误'
+            }
+
+        }
+    }
+
+</script>
+
+</html>

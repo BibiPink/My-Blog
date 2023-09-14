@@ -1,0 +1,93 @@
+/* 快捷键收起：ctrl+k，ctrl+0 */
+/* 快捷键展开：ctrl+k，ctrl+j */
+body {
+    width: 100%;
+    height: 100%;
+    background: url(../image/11.jpg)no-repeat;
+    background-size: cover;
+    background-attachment: fixed
+}
+
+/* 开头 */
+.title {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(71, 70, 70, 0.8);
+    display: flex;
+}
+
+.title span {
+    color: aliceblue;
+}
+
+.title a {
+    float: right;
+    color: aliceblue;
+}
+
+/* 头部照片背景墙 */
+.header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url(../image/12.jpg)no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: aliceblue;
+    padding-top: 20px;
+}
+
+.header ul {
+    position: absolute;
+    width: 1000px;
+    bottom: 0;
+    background-color: rgba(83, 82, 82, 0.8);
+}
+
+.header ul li {
+    float: left;
+    margin: 10px 20px;
+    transition: all, 0.5s;
+
+}
+
+.header ul li a {
+    color: aliceblue;
+}
+
+.header ul li:hover {
+    transform: translateY(-3px);
+}
+
+/* 文本展示区 */
+.content {
+    opacity: 0.7;
+    background-color: rgb(198, 245, 245);
+    border-radius: 20px;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+
+/* 我的动态朋友圈展示 */
+.artical {
+    width: 900px;
+    margin: 40px 0;
+}
+
+/* 发表人和发表时间 */
+.artical span {
+    color: rgb(119, 121, 120);
+}
+
+.artical span:nth-child(2) {
+    float: right;
+}
+
+/* 发表内容 */
+.publish {
+    margin-top: 10px;
+}
